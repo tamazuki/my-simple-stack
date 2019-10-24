@@ -1,34 +1,44 @@
-package deqo.assu;import java.util.*;
+package deqo.assu;
 import java.util.*;
+import java.util.Stack;
 
 public class SimpleEssai implements SimpleStack{
+    ArrayList <Item>  array;
+
+    public SimpleEssai (){
+        this.array = new ArrayList<>();
+    }
+
     @Override
     public boolean isEmpty() {
-        return false;
+        return array.isEmpty();
     }
 
     @Override
     public int getSize() {
-        return 0;
+        return array.size();
     }
 
     @Override
     public void push(Item item) {
-
-        Stack st = new Stack();
-        st.push("Java");
-        st.push("Source");
-        st.push("code");
-        System.out.println("Elements in the stack: "+st);
+        array.add(item);
     }
 
     @Override
     public Item peek() throws EmptyStackException {
-        return null;
+        if(array.isEmpty()){
+            throw new EmptyStackException();
+        }
+        return array.get(getSize()-1);
     }
 
     @Override
     public Item pop() throws EmptyStackException {
-        return null;
+        if(array.isEmpty()){
+            throw new EmptyStackException();
+        }
+        Item temp = peek();
+        array.remove(getSize()-1);
+        return temp;
     }
 }

@@ -10,6 +10,6 @@ public interface SimpleStack {
 
     public Item peek() throws EmptyStackException;
 
-    public Item pop()   throws EmptyStackException;
+    public Item pop() throws EmptyStackException;
 
 }

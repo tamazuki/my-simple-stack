@@ -1,8 +1,17 @@
 package deqo.assu;
 
 public class Item {
-    public String createobject(){
-        String nomville = "inconnu";
+    String nomville;
+
+    public Item (String ls){
+        this.nomville = ls;
+    }
+
+    public String getNomville() {
         return nomville;
+    }
+
+    public void setNomville(String nomville) {
+        this.nomville = nomville;
     }
 }
